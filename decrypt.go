@@ -30,8 +30,8 @@ func pkcs7UnPadding(src []byte) ([]byte, error) {
 	return src[:origLen], nil
 }
 
-//WxDecrypt 微信小程序解密
-func WxDecrypt(encryptedData, iv, sessionKey, appID string) (map[string]interface{}, error) {
+//Decrypt 微信小程序解密
+func Decrypt(encryptedData, iv, sessionKey, appID string) (map[string]interface{}, error) {
 	if len(sessionKey) != 24 || len(iv) != 24 {
 		return nil, errors.New("SessionKey or iv invalid")
 	}
